@@ -1,23 +1,19 @@
-import React, { Component, CSSProperties } from 'react';
+import React, { Component } from 'react';
 import Adder from './Adder';
-
 interface listItem {
     id:string,
     text:string,
     date:string
-
 }
 
-interface Props {
-
-}
+interface Props {}
 interface State {
     items:listItem[]
 }
 export default class Container extends Component<Props,State>{
     constructor(props:Props){
         super(props)
-        this.state={
+        this.state = {
             items:[
                 {id:"",
                 text:"",
@@ -33,7 +29,6 @@ export default class Container extends Component<Props,State>{
         const m = String.fromCharCode(n) + k;
         let theNewList = this.state.items
 
-        //Here we remove the item which has empty value and push the value we want to
         theNewList.push({id:m.toString(), text:item, date:dateOfTodo.toLocaleTimeString()})
 
         //Here we renew the list we had with the new list
@@ -43,13 +38,14 @@ export default class Container extends Component<Props,State>{
     }
     private removeFromListItem = (id:string) => {
         const myUpdatedList = this.state.items
-        for(let i=0; i<this.state.items.length; i++){
+        for(let i=0; i<myUpdatedList.length; i++){
             if(id == myUpdatedList[i].id) {
 
                 myUpdatedList.splice(i, 1);
                 break
             }
         }
+        
         this.setState({
             items:myUpdatedList
         })

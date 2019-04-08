@@ -28,6 +28,8 @@ export default class Adder extends Component<Props, State>{
         this.setState({
             inputValue:event.currentTarget.value
         })
+
+
     }
 
     handleSubmit = (event:React.FormEvent<HTMLFormElement>) =>{

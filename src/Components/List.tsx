@@ -15,8 +15,6 @@ export default class List extends Component<Props>{
     constructor(props: Props){
         super(props)
     }
-
-
     render(){
         return (<ListItem  theItemsToDisplay={this.props.myAddedItems} myRemovFunc={this.props.myRemoveFunc} />)    
     }
